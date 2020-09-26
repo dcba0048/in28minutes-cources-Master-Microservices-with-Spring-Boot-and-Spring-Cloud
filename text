@@ -26,3 +26,4 @@ http://localhost:8765/corrency-conversion-service/currency-converter-feign/from/
 postman client: 
 POST request :  http://localhost:8080/actuator/refresh
 
+
