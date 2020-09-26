@@ -1,0 +1,28 @@
+https://github.com/in28minutes/spring-microservices/tree/master/03.microservices
+
+http://localhost:8000/currency-exchange/from/EUR/to/INR
+http://localhost:8765/currency-exchange-service/currency-exchange/from/EUR/to/INR
+
+2020-09-24 18:28:27.528  INFO 11084 --- [nio-8765-exec-1] c.i.m.n.ZuulLoggingFilter                : request -> org.springframework.cloud.netflix.zuul.filters.pre.Servlet30RequestWrapper@349fb46e request uri -> /currency-exchange-service/currency-exchange/from/EUR/to/INR
+
+http://localhost:8100/currency-converter-feign/from/EUR/to/INR/quantity/1000
+http://localhost:8765/corrency-conversion-service/currency-converter-feign/from/EUR/to/INR/quantity/1000
+
+2020-09-24 19:24:03.326  INFO 11084 --- [nio-8765-exec-2] c.i.m.n.ZuulLoggingFilter                : request -> org.springframework.cloud.netflix.zuul.filters.pre.Servlet30RequestWrapper@327ecbb8 request uri -> /currency-conversion-service/currency-converter-feign/from/EUR/to/INR/quantity/1000
+2020-09-24 19:24:03.418  INFO 11084 --- [nio-8765-exec-1] c.i.m.n.ZuulLoggingFilter                : request -> org.springframework.cloud.netflix.zuul.filters.pre.Servlet30RequestWrapper@6eb1f10e request uri -> /currency-exchange-service/currency-exchange/from/EUR/to/INR
+
+
+2020-09-25 17:15:48.432  INFO [currency-conversion-service,456381059705b797,456381059705b797,true] 11308 --- [io-8100-exec-10] c.i.m.c.CurrencyConversionController     : com.in28minutes.microservices.currencyconversionservice.CurrencyConversionBean@1eff7c7d
+2020-09-25 17:15:45.939  INFO [netflix-zuul-api-gateway-server,456381059705b797,677ef5a9b3617386,true] 11204 --- [nio-8765-exec-7] c.i.m.n.ZuulLoggingFilter                : request -> org.springframework.cloud.netflix.zuul.filters.pre.Servlet30RequestWrapper@cefe7dd request uri -> /currency-exchange-service/currency-exchange/from/EUR/to/INR
+2020-09-25 17:15:46.936  INFO [netflix-zuul-api-gateway-server,456381059705b797,dbeddcb2af682888,true] 11204 --- [nio-8765-exec-8] c.i.m.n.ZuulLoggingFilter                : request -> org.springframework.cloud.netflix.zuul.filters.pre.Servlet30RequestWrapper@161745c9 request uri -> /currency-exchange-service/currency-exchange/from/EUR/to/INR
+
+
+
+2020-09-25 17:20:40.465  INFO [currency-conversion-service,c04735dba3923381,c04735dba3923381,true] 11308 --- [nio-8100-exec-9] c.i.m.c.CurrencyConversionController     : com.in28minutes.microservices.currencyconversionservice.CurrencyConversionBean@18b2221b
+2020-09-25 17:20:40.431  INFO [currency-exchange-service,c04735dba3923381,8f2153a1de9238d8,true] 4124 --- [nio-8000-exec-5] c.i.m.c.CurrencyExchangeController       : com.in28minutes.microservices.currencyexchangeservice.ExchangeValue@6ce3d596
+2020-09-25 17:20:40.384  INFO [netflix-zuul-api-gateway-server,c04735dba3923381,13e838f5eb49bef2,true] 11204 --- [nio-8765-exec-1] c.i.m.n.ZuulLoggingFilter                : request -> org.springframework.cloud.netflix.zuul.filters.pre.Servlet30RequestWrapper@3d5b13c5 request uri -> /currency-exchange-service/currency-exchange/from/EUR/to/INR
+
+
+postman client: 
+POST request :  http://localhost:8080/actuator/refresh
+
